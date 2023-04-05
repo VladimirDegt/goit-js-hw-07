@@ -64,31 +64,3 @@ export const galleryItems = [
   },
 ];
 
-const refs = {
-  container: document.querySelector('.gallery'),
-}
-
-// ----------------------------створення розмітки----------------------------------
-const arrayImgTag = galleryItems.map ( ({preview, original, description}) => {
-  return `<li class="gallery__item">
-            <a class="gallery__link" href="${original}">
-              <img
-                class="gallery__image"
-                src="${preview}"
-                data-source="${original}"
-                alt="${description}"
-              />
-            </a>
-          </li>`
-});
-
-refs.container.insertAdjacentHTML("beforeend", arrayImgTag.join(''));
-
-// ------------------------------END створення розмітки----------------------------------
-
-const onImgClick = (e) => {
-  e.preventDefault();
-  console.log(e.target.dataset.source);
-}
-
-refs.container.addEventListener('click', onImgClick);
