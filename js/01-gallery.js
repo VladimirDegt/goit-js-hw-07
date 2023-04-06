@@ -22,7 +22,7 @@ const arrayImgTag = galleryItems.map ( ({preview, original, description}) => {
 refs.container.insertAdjacentHTML("beforeend", arrayImgTag.join(''));
 // ------------------------------END створення розмітки----------------------------------
 
-// ------------------------------функционал открытия и закрытия лайтбокса----------------
+// ------------------------------підключення лайтбоксу з бібліотеці basicLightbox--------
 let instance = '';
 
 const onImgClick = (e) => {
@@ -45,6 +45,6 @@ const onEscClick = (e) => {
 };
 
 refs.container.addEventListener('click', onImgClick);
-// ------------------------------END функционал открытия и закрытия лайтбокса----------------
+// ------------------------------END підключення лайтбоксу----------------------------------
 
 

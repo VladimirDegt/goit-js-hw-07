@@ -17,11 +17,15 @@ const arrayImgTag = galleryItems.map ( ({preview, original, description}) => {
 refs.container.insertAdjacentHTML("beforeend", arrayImgTag.join(''));
 // ------------------------------END створення розмітки----------------------------------
 
+// ------------------------------підключення лайтбоксу з бібліотеці SimpleLightbox-------
 let gallery = new SimpleLightbox('.gallery a', {
   close: false, 
   showCounter: false,
-  additionalHtml: `<h1>Тут повинна бути інфа з alt</h1>`
+  captionsData: 'alt',
+  captionClass: 'text__label',
 });
-console.log(gallery)
+
 gallery.on('show.simplelightbox', function () {
 });
+// ------------------------------END підключення лайтбоксу-----------------------------------
+
