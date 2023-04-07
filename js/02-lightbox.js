@@ -22,10 +22,9 @@ let gallery = new SimpleLightbox('.gallery a', {
   close: false, 
   showCounter: false,
   captionsData: 'alt',
+  captionDelay: 250,
   captionClass: 'text__label',
 });
 
-gallery.on('show.simplelightbox', function () {
-});
 // ------------------------------END підключення лайтбоксу-----------------------------------
 

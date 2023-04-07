@@ -32,8 +32,11 @@ const onImgClick = (e) => {
   if (target.nodeName !== "IMG"){
     return;
   };
-  instance = basicLightbox.create(`<img src="${target.dataset.source}" >`);
-  window.addEventListener('keydown', onEscClick);
+  instance = basicLightbox.create(`<img src="${target.dataset.source}" >`,
+   {onShow: () => {window.addEventListener('keydown', onEscClick);},
+   onClose: () => {window.removeEventListener('keydown', onEscClick);}
+  }
+   );
   instance.show();
 };
 
